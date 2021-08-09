@@ -1,0 +1,5 @@
+!git clone https://github.com/ultralytics/yolov5
+!pip install -r yolov5/requirements.txt
+!python /content/yolov5/train.py --img 704 --batch 16 --epochs 100 --data '/content/YAML/data.yaml' --cfg '/content/yolov5/models/yolov5s.yaml' --weights '' --name YOLOV5XL --nosave --cache
+!python /content/yolov5/detect.py --source /content/testing --weights '/content/runs/train/YOLOV5XL2/weights/last.pt' --img 704 --conf 0.5 --save-txt
+! zip -r finalresults.zip runs/
